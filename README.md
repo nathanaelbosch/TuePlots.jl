@@ -16,6 +16,14 @@ Many of the nice features of [tueplots](https://github.com/pnkraemer/tueplots/) 
 
 ---
 
+## Installation
+Install TuePlots.jl directly from github:
+```
+julia> ]
+(v1.7) pkg> add https://github.com/nathanaelbosch/TuePlots.jl
+``````
+
+
 ## CairoMakie.jl defaults vs TuePlots.jl
 <img src="files/paper_before.svg" width="400"/> <img src="files/paper_after.svg" width="400"/>
 
