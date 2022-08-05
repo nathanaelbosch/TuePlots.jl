@@ -38,5 +38,6 @@ function plotsjl_fontsize_theme_kwargs(key; kwargs...)
         legend_title_font_pointsize = main,
         tickfontsize = small,
         labelfontsize = main,
+        thickness_scaling = 0.65, # necessary to get the same font sizes as with Makie.jl
     )
 end

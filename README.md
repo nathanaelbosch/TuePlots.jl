@@ -41,7 +41,7 @@ axislegend(ax)
 save("plot.pdf", fig, pt_per_unit=1) # pt_per_unit is needed to ensure the correct sizes
 ```
 <p align="center">
-<img src="./files/plot.svg" width="400" />
+<img src="./files/makie.svg" width="400" />
 </p>
 
 Voilà! Now you can focus on the important things, like choosing the best color scheme for your plot.
