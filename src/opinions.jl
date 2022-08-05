@@ -2,7 +2,7 @@
 """
 Theme with thinner lines everywhere to suit the typically smaller figure sizes in papers.
 """
-ThinTheme() = MakieCore.Theme(
+MakieThinTheme() = MakieCore.Theme(
     figure_padding = 5,
     Axis = (
         spinewidth = 0.5,

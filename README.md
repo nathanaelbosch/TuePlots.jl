@@ -29,17 +29,38 @@ using CairoMakie, TuePlots
 data = cumsum(randn(4, 101), dims = 2)
 
 # These are the additional lines to set fonts, figsize, and make the plot a bit more sleek
-update_theme!(TuePlots.FontsizeTheme(:icml2022))
-update_theme!(TuePlots.ThinTheme())
+update_theme!(TuePlots.MakieFontsizeTheme(:icml2022))
+update_theme!(TuePlots.MakieThinTheme())
 update_theme!(resolution=TuePlots.FIGSIZES[:icml2022_half])
 
 # Then, plot as usual
 fig = Figure()
-ax = Axis(fig[1, 1])
+ax = Axis(fig[1, 1], xlabel="Time", ylabel="Quantity of interest")
 sp = series!(ax, data, labels = ["label $i" for i in 1:4])
 axislegend(ax)
 save("plot.pdf", fig, pt_per_unit=1) # pt_per_unit is needed to ensure the correct sizes
 ```
-![plot](./files/plot.svg?raw=true "plot")
+<p align="center">
+<img src="./files/plot.svg" width="400" />
+</p>
 
 Voilà! Now you can focus on the important things, like choosing the best color scheme for your plot.
+
+
+## Using TuePlots.jl with Plots.jl
+You can also use TuePlots.jl with Plots.jl!
+Just set the figure size and font size via `Plots.theme` as follows:
+```julia
+using Plots, TuePlots
+
+data = cumsum(randn(4, 101), dims = 2)
+
+theme(:default;
+      size = TuePlots.FIGSIZES[:icml2022_half],
+      TuePlots.plotsjl_fontsize_theme_kwargs(:icml2022)...)
+plot(data', label = permutedims(["label $i" for i in 1:4]))
+savefig("plot.pdf")
+```
+<p align="center">
+<img src="./files/plotsjl.svg" width="400" />
+</p>

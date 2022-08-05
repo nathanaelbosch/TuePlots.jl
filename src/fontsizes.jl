@@ -5,9 +5,10 @@ BASE_FONT_SIZES = Dict(
     :jmlr2001 => 10.95,
 )
 
+base_to_sizes(base; reduction = 1, small_offset = 2) =
+    (base - reduction, base - reduction - small_offset)
 function base_to_theme(base; reduction = 1, small_offset = 2)
-    main = base - reduction
-    small = main - small_offset
+    main, small = base_to_sizes(base; reduction = reduction, small_offset = small_offset)
     t = MakieCore.Theme(
         fontsize = main,
         Axis = (
@@ -27,4 +28,15 @@ function base_to_theme(base; reduction = 1, small_offset = 2)
     )
     return t
 end
-FontsizeTheme(key; kwargs...) = base_to_theme(BASE_FONT_SIZES[key]; kwargs...)
+MakieFontsizeTheme(key; kwargs...) = base_to_theme(BASE_FONT_SIZES[key]; kwargs...)
+
+function plotsjl_fontsize_theme_kwargs(key; kwargs...)
+    main, small = base_to_sizes(BASE_FONT_SIZES[key]; kwargs...)
+    return (
+        titlefontsize = main,
+        legend_font_pointsize = small,
+        legend_title_font_pointsize = main,
+        tickfontsize = small,
+        labelfontsize = main,
+    )
+end
