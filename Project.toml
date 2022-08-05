@@ -3,6 +3,11 @@ uuid = "7dc86ad5-723e-4492-bd0d-d0b58009a4c8"
 authors = ["Nathanael Bosch <nathanael.bosch@uni-tuebingen.de> and contributors"]
 version = "0.1.0"
 
+[deps]
+CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+MakieCore = "20f20a25-4f0e-4fdf-b5d1-57303727442b"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
+
 [compat]
 julia = "1.7"
 

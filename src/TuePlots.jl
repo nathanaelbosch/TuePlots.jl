@@ -1,5 +1,9 @@
 module TuePlots
 
-# Write your package code here.
+using MakieCore
+
+include("figsizes.jl")
+include("fontsizes.jl")
+include("opinions.jl")
 
 end
