@@ -2,6 +2,7 @@ BASE_FONT_SIZES = Dict(
     :icml2022 => 9,
     :neurips2021 => 10,
     :aistats2022 => 10,
+    :aistats2023 => 10,
     :jmlr2001 => 10.95,
 )
 
