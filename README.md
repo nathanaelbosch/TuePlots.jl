@@ -21,7 +21,7 @@ Install TuePlots.jl directly from github:
 ```
 julia> ]
 (v1.7) pkg> add https://github.com/nathanaelbosch/TuePlots.jl
-``````
+```
 
 
 ## CairoMakie.jl defaults vs TuePlots.jl
