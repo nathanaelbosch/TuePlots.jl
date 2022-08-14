@@ -1,8 +1,10 @@
+"""
+Makie theme with thinner lines everywhere.
 
+Helpful to improve most Makie plots, since the default settings are often chosen
+for much larger plots than the small figure sizes used in papers.
 """
-Theme with thinner lines everywhere to suit the typically smaller figure sizes in papers.
-"""
-MakieThinTheme() = MakieCore.Theme(
+const MakieThinTheme = MakieCore.Theme(
     figure_padding = 5,
     Axis = (
         spinewidth = 0.5,
@@ -13,10 +15,7 @@ MakieThinTheme() = MakieCore.Theme(
     ),
     Legend = (
         framewidth = 0.5,
-        # framevisible=false,
         patchsize = (8, 8),
         padding = (5, 5, 5, 5),
     ),
-    # Scatter=(strokewidth=0.2, markersize=4),
-    # ScatterLines=(linewidth=3, strokewidth=0.5),
 )
