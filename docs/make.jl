@@ -18,6 +18,7 @@ makedocs(;
         "Home" => "index.md",
         "Example with Makie.jl" => "example_makie.md",
         "Example with Plots.jl" => "example_plotsjl.md",
+        "API" => "api.md",
     ],
 )
 
