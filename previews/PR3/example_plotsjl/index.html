@@ -5,12 +5,23 @@ data = cumsum(randn(4, 200), dims = 2)
 
 function plot_data(data)
     fig = Figure()
-    ax = Axis(fig[1, 1], xlabel=&quot;Time&quot;, ylabel=&quot;Quantity of interest&quot;)
+    ax = Axis(fig[1, 1], xlabel = &quot;Time&quot;, ylabel = &quot;Quantity of interest&quot;)
     sp = series!(ax, data, labels = [&quot;label $i&quot; for i in 1:4])
     axislegend(ax)
     return fig
 end
 
 theme(:default;
-      TuePlots.get_plotsjl_theme_kwargs(TuePlots.SETTINGS[:ICML2022]; font=true, fontsize=true, figsize=:full, thinned=true)...)
-plot(data&#39;, label = permutedims([&quot;label $i&quot; for i in 1:4]), xlabel=&quot;Time&quot;, ylabel=&quot;Quantity of Interest&quot;)</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../example_makie/">« Example with Makie.jl</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.22 on <span class="colophon-date" title="Sunday 14 August 2022 15:30">Sunday 14 August 2022</span>. Using Julia version 1.7.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+    TuePlots.get_plotsjl_theme_kwargs(
+        TuePlots.SETTINGS[:ICML2022];
+        font = true,
+        fontsize = true,
+        figsize = :full,
+        thinned = true,
+    )...)
+plot(
+    data&#39;,
+    label = permutedims([&quot;label $i&quot; for i in 1:4]),
+    xlabel = &quot;Time&quot;,
+    ylabel = &quot;Quantity of Interest&quot;,
+)</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../example_makie/">« Example with Makie.jl</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.22 on <span class="colophon-date" title="Sunday 14 August 2022 15:40">Sunday 14 August 2022</span>. Using Julia version 1.7.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
