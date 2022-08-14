@@ -37,16 +37,16 @@ using CairoMakie, TuePlots
 data = cumsum(randn(4, 101), dims = 2)
 
 # These are the additional lines to set fonts, figsize, and make the plot a bit more sleek
-update_theme!(TuePlots.MakieFontsizeTheme(:icml2022))
-update_theme!(TuePlots.MakieThinTheme())
-update_theme!(resolution=TuePlots.FIGSIZES[:icml2022_half])
+T = Theme(TuePlots.SETTINGS[:AISTATS2022]; font=true, fontsize=true, figsize=:half, thinned=true)
 
 # Then, plot as usual
-fig = Figure()
-ax = Axis(fig[1, 1], xlabel="Time", ylabel="Quantity of interest")
-sp = series!(ax, data, labels = ["label $i" for i in 1:4])
-axislegend(ax)
-save("plot.pdf", fig, pt_per_unit=1) # pt_per_unit is needed to ensure the correct sizes
+with_theme(T) do
+    fig = Figure()
+    ax = Axis(fig[1, 1], xlabel="Time", ylabel="Quantity of interest")
+    sp = series!(ax, data, labels = ["label $i" for i in 1:4])
+    axislegend(ax)
+    save("makie.pdf", fig, pt_per_unit=1) # pt_per_unit is needed to ensure the correct sizes
+end
 ```
 <p align="center">
 <img src="./files/makie.svg" width="400" />
@@ -64,10 +64,13 @@ using Plots, TuePlots
 data = cumsum(randn(4, 101), dims = 2)
 
 theme(:default;
-      size = TuePlots.FIGSIZES[:icml2022_half],
-      TuePlots.plotsjl_fontsize_theme_kwargs(:icml2022)...)
-plot(data', label = permutedims(["label $i" for i in 1:4]))
-savefig("plot.pdf")
+      TuePlots.get_plotsjl_theme_kwargs(TuePlots.SETTINGS[:ICML2022]; fontsize=true, figsize=:half)...)
+plot(data',
+     label = permutedims(["label $i" for i in 1:4]),
+     xlabel = "Time",
+     ylabel = "Quantity of interest",
+);
+savefig("plotsjl.pdf")
 ```
 <p align="center">
 <img src="./files/plotsjl.svg" width="400" />
