@@ -61,7 +61,6 @@ end
 <img src="./files/makie.svg" width="400" />
 </p>
 Voilà! Now you can focus on the important things, like choosing the best color scheme for your plot.
-
 ## Using TuePlots.jl with Plots.jl
 
 WARNING: This is still experimental. For the best experience I recommend using TuePlots with Makie.
