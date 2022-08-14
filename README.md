@@ -34,9 +34,9 @@ With TuePlots.jl you don't need `\includegraphics[width=\linewidth]` anymore sin
 You only need to add three lines to get correctly sized plots:
 
 ```julia
-using CairoMakie, TuePlots
+using CairoMakie, TuePlots, Random
 
-data = cumsum(randn(4, 101), dims = 2)
+data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
 
 # These are the additional lines to set fonts, figsize, and make the plot a bit more sleek
 T = Theme(
@@ -70,9 +70,9 @@ Voilà! Now you can focus on the important things, like choosing the best color 
 To use TuePlots.jl with Plots.jl, you can let TuePlots generate keyword arguments for `Plots.theme` as follows:
 
 ```julia
-using Plots, TuePlots
+using Plots, TuePlots, Random
 
-data = cumsum(randn(4, 101), dims = 2)
+data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
 
 theme(:default;
     TuePlots.get_plotsjl_theme_kwargs(

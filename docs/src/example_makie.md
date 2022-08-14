@@ -3,10 +3,10 @@
 Consider series plot of some time series data:
 
 ```@example 1
-using CairoMakie, TuePlots
+using CairoMakie, TuePlots, Random
 CairoMakie.activate!(type = "svg")
 
-data = cumsum(randn(4, 200), dims = 2)
+data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
 
 function plot_data(data; resolution = (487.822, 301.491))
     fig = Figure(resolution = resolution)
