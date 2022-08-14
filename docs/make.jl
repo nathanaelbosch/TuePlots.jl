@@ -16,10 +16,13 @@ makedocs(;
     ),
     pages = [
         "Home" => "index.md",
+        "Example with Makie.jl" => "example_makie.md",
+        "Example with Plots.jl" => "example_plotsjl.md",
     ],
 )
 
 deploydocs(;
     repo = "github.com/nathanaelbosch/TuePlots.jl",
     devbranch = "main",
+    push_preview = true,
 )

@@ -1,3 +1,10 @@
 [deps]
+AbbreviatedStackTraces = "ac637c84-cc71-43bf-9c33-c1b4316be3d4"
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+Eyeball = "ce36242b-ad83-4f84-8519-47cd8aeefd60"
+OhMyREPL = "5fb14364-9ced-5910-84b2-373655c76a03"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+TerminalLoggers = "5d786b92-1e48-4d6f-9151-6b4477ca9bed"
 TuePlots = "7dc86ad5-723e-4492-bd0d-d0b58009a4c8"
