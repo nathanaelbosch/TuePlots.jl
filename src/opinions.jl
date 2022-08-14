@@ -1,5 +1,8 @@
 """
-Theme with thinner lines everywhere to suit the typically smaller figure sizes in papers.
+Makie theme with thinner lines everywhere.
+
+Helpful to improve most Makie plots, since the default settings are often chosen
+for much larger plots than the small figure sizes used in papers.
 """
 const MakieThinTheme = MakieCore.Theme(
     figure_padding = 5,

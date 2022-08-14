@@ -5,6 +5,11 @@ Base.@kwdef struct TuePlotsSetting
     font::Any
 end
 
+"""
+Dict of available TuePlots settings.
+
+Use with [`MakieCore.Theme`](@ref) or [`get_plotsjl_theme_kwargs`](@ref).
+"""
 SETTINGS = Dict(
     :ICML2022 => TuePlotsSetting(
         width = 6.75,
@@ -43,4 +48,12 @@ SETTINGS = Dict(
         font = missing,
     ),
 )
-available_settings() = keys(SETTINGS) |> collect |> sort
+
+"""
+    get_available_settings()
+
+Return a list of settings available in TuePlots.jl.
+
+Effectively this function just returns the keys of [`SETTINGS`](@ref).
+"""
+get_available_settings() = keys(SETTINGS) |> collect |> sort
