@@ -1,3 +1,10 @@
+
+"""
+    get_plotsjl_theme_kwargs(setting::TuePlotsSetting;
+        font = true, fontsize = true, figsize = :full, thinned = trues+
+
+Build a named tuple to be used with `Plots.theme` out of the `TuePlotsSetting`.
+"""
 function get_plotsjl_theme_kwargs(
     setting::TuePlotsSetting;
     font = false, fontsize = true, figsize = :full, thickness_scaling = true,

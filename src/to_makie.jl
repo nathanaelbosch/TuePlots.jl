@@ -1,3 +1,9 @@
+"""
+    MakieCore.Theme(setting::TuePlotsSetting;
+        font = true, fontsize = true, figsize = :full, thinned = trues+
+
+Make a Makie `Theme` out of the `TuePlotsSetting`.
+"""
 function MakieCore.Theme(
     setting::TuePlotsSetting;
     font = true, fontsize = true, figsize = :full, thinned = true,
