@@ -21,7 +21,6 @@ theme(:default;
         font = true,
         fontsize = true,
         figsize = :full,
-        thinned = true,
     )...)
 plot(
     data',
