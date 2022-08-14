@@ -1,6 +1,6 @@
 function get_plotsjl_theme_kwargs(
     setting::TuePlotsSetting;
-    font = false, fontsize = true, figsize = :full, thickness_scaling = true
+    font = false, fontsize = true, figsize = :full, thickness_scaling = true,
 )
     kwargs = (;)
 

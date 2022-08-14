@@ -1,12 +1,11 @@
 function MakieCore.Theme(
     setting::TuePlotsSetting;
-    font=true, fontsize=true, figsize=:full, thinned=true,
-    )
-
+    font = true, fontsize = true, figsize = :full, thinned = true,
+)
     theme = MakieCore.Theme()
 
     if font
-        theme = merge(theme, MakieCore.Theme(font=setting.font))
+        theme = merge(theme, MakieCore.Theme(font = setting.font))
     end
 
     if fontsize
