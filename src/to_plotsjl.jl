@@ -24,9 +24,12 @@ function get_plotsjl_theme_kwargs(
     end
 
     if figsize == :full
-        resolution = width_to_resolution(setting.width_half)
+        resolution = width_to_resolution(setting.width)
         kwargs = merge(kwargs, (; size = resolution))
-    elseif figsize == :half && setting.width_half isa Number
+    elseif figsize == :half
+        if !(setting.width_half isa Number)
+            raise(ArgumentError("`:half` figsize is not available for this setting."))
+        end
         resolution = width_to_resolution(setting.width_half)
         kwargs = merge(kwargs, (; size = resolution))
     end
