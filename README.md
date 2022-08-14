@@ -31,23 +31,17 @@ julia> ]
 On the left, the font sizes are off since the original figure has been rescaled down to fit the paper column.
 With TuePlots.jl you don't need `\includegraphics[width=\linewidth]` anymore since the figure pdf itself has the correct size.
 
-You only need to add three lines to get correctly sized plots:
+Using TuePlots with Makie is easy: Just create a `Makie.Theme` from one of the settings provided by TuePlots:
 
 ```julia
 using CairoMakie, TuePlots, Random
 
 data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
 
-# These are the additional lines to set fonts, figsize, and make the plot a bit more sleek
-T = Theme(
-    TuePlots.SETTINGS[:AISTATS2022];
-    font = true,
-    fontsize = true,
-    figsize = :half,
-    thinned = true,
-)
+# Create a Makie.Theme with correct font, fontsize, and figure size:
+T = Theme(TuePlots.SETTINGS[:AISTATS2022];
+          font = true, fontsize = true, figsize = :half, thinned = true)
 
-# Then, plot as usual
 with_theme(T) do
     fig = Figure()
     ax = Axis(fig[1, 1], xlabel = "Time", ylabel = "Quantity of interest")
@@ -76,7 +70,7 @@ data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
 
 theme(:default;
     TuePlots.get_plotsjl_theme_kwargs(
-        TuePlots.SETTINGS[:ICML2022];
+        TuePlots.SETTINGS[:AISTATS2022];
         fontsize = true,
         figsize = :half,
     )...)
