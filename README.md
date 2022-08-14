@@ -65,7 +65,7 @@ Voilà! Now you can focus on the important things, like choosing the best color 
 
 ## Using TuePlots.jl with Plots.jl
 
-WARNING: This is still experimental. For the best experience I recommend using TuePlots with Makie.
+**WARNING:** This is still experimental and some features do not yet work correctly! For the best experience, use TuePlots with (Cairo)Makie.
 
 To use TuePlots.jl with Plots.jl, you can let TuePlots generate keyword arguments for `Plots.theme` as follows:
 
