@@ -19,4 +19,9 @@ import MakieCore, Plots
                   isnothing
         end
     end
+
+    @testset "Aqua.jl" begin
+        Aqua.test_all(TuePlots, ambiguities = false)
+        Aqua.test_ambiguities(TuePlots)
+    end
 end
