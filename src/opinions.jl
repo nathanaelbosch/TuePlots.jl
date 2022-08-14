@@ -15,10 +15,7 @@ const MakieThinTheme = MakieCore.Theme(
     ),
     Legend = (
         framewidth = 0.5,
-        # framevisible=false,
         patchsize = (8, 8),
         padding = (5, 5, 5, 5),
     ),
-    # Scatter=(strokewidth=0.2, markersize=4),
-    # ScatterLines=(linewidth=3, strokewidth=0.5),
 )

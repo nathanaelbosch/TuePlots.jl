@@ -9,10 +9,11 @@ width_to_resolution(width) =
 
 const FONTSIZE_REDUCTION = 1
 const SMALL_FONTSIZE_OFFSET = 2
-base_fontsize_to_sizes(base; reduction = 1, small_offset = 2) =
+base_fontsize_to_sizes(base) =
     (base - FONTSIZE_REDUCTION, base - FONTSIZE_REDUCTION - SMALL_FONTSIZE_OFFSET)
 
 include("settings.jl")
+
 include("to_makie.jl")
 include("to_plotsjl.jl")
 
