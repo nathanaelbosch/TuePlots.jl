@@ -1,4 +1,4 @@
-# Using TuePlots.jl with Makie.jl
+# Using TuePlots with Makie
 
 Consider series plot of some time series data:
 
