@@ -1,6 +1,7 @@
-# Using TuePlots.jl with Plots.jl
+# Using TuePlots with Plots.jl (experimental)
 
-Without TuePlots:
+**WARNING:** This is still experimental and some features do not yet work correctly! For the best experience, use TuePlots with (Cairo)Makie
+(see "[Using TuePlots with Makie](@ref)").
 
 ```@example 1
 using Plots, TuePlots, Random

@@ -1,37 +1,34 @@
 # TuePlots.jl
 
+A Julia port of the [tueplots](https://github.com/pnkraemer/tueplots/) Python package.
+
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://nathanaelbosch.github.io/TuePlots.jl/stable/)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://nathanaelbosch.github.io/TuePlots.jl/dev/)
 [![Build Status](https://github.com/nathanaelbosch/TuePlots.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/nathanaelbosch/TuePlots.jl/actions/workflows/CI.yml?query=branch%3Amain)
 [![Coverage](https://codecov.io/gh/nathanaelbosch/TuePlots.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/nathanaelbosch/TuePlots.jl)
 
-A Julia version of [tueplots](https://github.com/pnkraemer/tueplots/) for creating plots for scientific publications with minimal overhead.
-
-* * *
-
-Work in progress!
-This is just a quick first draft.
-Many of the nice features of [tueplots](https://github.com/pnkraemer/tueplots/) are still missing.
-
-* * *
-
-## Installation
-
-Install TuePlots.jl directly from github:
-
-```
-julia> ]
-(v1.7) pkg> add https://github.com/nathanaelbosch/TuePlots.jl
-```
-
-## CairoMakie.jl defaults vs TuePlots.jl
+TuePlots helps you create better plots for scientific publications.
+TuePlots does _not_ try to make your plots "beautiful" - colors and line widths are up to you - but it takes care of the annoying bits like figure size, font size, and setting the correct font.
+Look at the following example:
 
 <img src="files/paper_before.svg" width="400"/> <img src="files/paper_after.svg" width="400"/>
 
-On the left, the font sizes are off since the original figure has been rescaled down to fit the paper column.
-With TuePlots.jl you don't need `\includegraphics[width=\linewidth]` anymore since the figure pdf itself has the correct size.
+The figure on the left is created with the CairoMakie default settings.
+Since the figure resolution does not fit the PDF page, it has to be rescaled in LaTeX and as a result font sizes are completely off.
+But with just a few lines of TuePlots.jl you get the result on the right, with correct fonts and figure sizes - you don't even need to do `[width=\linewidth]` in LaTeX anymore!
 
-Using TuePlots with Makie is easy: Just create a `Makie.Theme` from one of the settings provided by TuePlots:
+## Installation
+
+Install TuePlots directly with the Julia package manager:
+
+```
+julia> ]
+(v1.7) pkg> add TuePlots
+```
+
+## TuePlots.jl with CairoMakie.jl (recommended)
+
+Using TuePlots with (Cairo)Makie is easy: Just create a `Makie.Theme` from one of the settings provided by TuePlots:
 
 ```julia
 using CairoMakie, TuePlots, Random
@@ -57,7 +54,7 @@ end
 
 Voilà! Now you can focus on the important things, like choosing the best color scheme for your plot.
 
-## Using TuePlots.jl with Plots.jl
+## TuePlots.jl with Plots.jl (experimental)
 
 **WARNING:** This is still experimental and some features do not yet work correctly! For the best experience, use TuePlots with (Cairo)Makie.
 

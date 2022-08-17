@@ -1,6 +1,6 @@
-# Using TuePlots.jl with Makie.jl
+# Using TuePlots with Makie
 
-Consider series plot of some time series data:
+Let's make a simple series plot of some time series data:
 
 ```@example 1
 using CairoMakie, TuePlots, Random
@@ -19,21 +19,21 @@ end
 plot_data(data)
 ```
 
-This plot looks fine here in the documentation, but when you imagine it as a full-width plot in a paper, the fonts are much too large.
+This plot looks fine here in the documentation, but when you imagine it as a full-width plot in a paper the fonts are much too large.
 It's easy to fix these with TuePlots.jl!
-All you have to do is create a Makie `Theme` from one of the available settings:
+All we have to do is create a Makie `Theme` from one of the available settings:
 
 ```@example 1
 T = Theme(
     TuePlots.SETTINGS[:ICML2022];
     font = true,
     fontsize = true,
-    figsize = false,
-    thinned = false,
+    figsize = false, # already chosen correctly in this example
+    thinned = false, # explained later
 )
 ```
 
-You can use it as usual:
+We can use `T` like any Makie Theme (see also the [Makie Theming documentation](https://makie.juliaplots.org/stable/documentation/theming/)):
 
 ```@example 1
 with_theme(T) do
@@ -41,7 +41,11 @@ with_theme(T) do
 end
 ```
 
-Fonts and fontsizes are correct now. Now we can start making the plot more beautiful, e.g. by making lines thinner and reducing the padding. We just create another Theme and merge it with the one from before:
+Fonts and fontsizes are correct now!
+
+But we're not quite happy with the result yet.
+Let's make the plot more beautiful, e.g. by making lines thinner and reducing the padding.
+As one would normally do with Makie, we just create another Theme - which we then merge with the previous one:
 
 ```@example 1
 T2 = Theme(
@@ -65,4 +69,4 @@ with_theme(merge(T, T2)) do
 end
 ```
 
-Voilà!
+Voilà! And if you like this setting, you can also reduce padding and line widths with less effort by just setting `thinned=true` when creating the Theme.
