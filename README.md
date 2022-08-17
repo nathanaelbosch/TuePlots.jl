@@ -13,8 +13,9 @@ Look at the following example:
 
 <img src="files/paper_before.svg" width="400"/> <img src="files/paper_after.svg" width="400"/>
 
-The figure on the left is created with the CairoMakie default settings so the figure had to be rescaled in LaTeX and font sizes are completely off.
-With just a few lines of TuePlots.jl you get the right result with correct fonts and figure sizes - you don't even need to do `width=\linewidth` in LaTeX anymore!
+The figure on the left is created with the CairoMakie default settings.
+Since the figure resolution does not fit the PDF page, it has to be rescaled in LaTeX and as a result font sizes are completely off.
+But with just a few lines of TuePlots.jl, you get the right result with correct fonts and figure sizes - you don't even need to do `[width=\linewidth]` in LaTeX anymore!
 
 ## Installation
 
