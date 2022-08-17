@@ -26,7 +26,7 @@ julia> ]
 (v1.7) pkg> add TuePlots
 ```
 
-## TuePlots.jl with CairoMakie.jl
+## TuePlots.jl with CairoMakie.jl (recommended)
 
 Using TuePlots with (Cairo)Makie is easy: Just create a `Makie.Theme` from one of the settings provided by TuePlots:
 
@@ -54,7 +54,7 @@ end
 
 Voilà! Now you can focus on the important things, like choosing the best color scheme for your plot.
 
-## TuePlots.jl with Plots.jl
+## TuePlots.jl with Plots.jl (experimental)
 
 **WARNING:** This is still experimental and some features do not yet work correctly! For the best experience, use TuePlots with (Cairo)Makie.
 
