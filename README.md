@@ -15,7 +15,7 @@ Look at the following example:
 
 The figure on the left is created with the CairoMakie default settings.
 Since the figure resolution does not fit the PDF page, it has to be rescaled in LaTeX and as a result font sizes are completely off.
-But with just a few lines of TuePlots.jl, you get the right result with correct fonts and figure sizes - you don't even need to do `[width=\linewidth]` in LaTeX anymore!
+But with just a few lines of TuePlots.jl you get the result on the right, with correct fonts and figure sizes - you don't even need to do `[width=\linewidth]` in LaTeX anymore!
 
 ## Installation
 
