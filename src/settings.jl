@@ -47,6 +47,12 @@ SETTINGS = Dict(
         base_fontsize = missing,
         font = missing,
     ),
+    :ICLR2023 => TuePlotsSetting(
+        width = 5.5,
+        width_half = nothing,
+        base_fontsize = 10,
+        font = "Times New Roman",
+    ),
 )
 
 """
