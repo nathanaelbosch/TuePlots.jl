@@ -53,6 +53,12 @@ SETTINGS = Dict(
         base_fontsize = 10,
         font = "Times New Roman",
     ),
+    :UAI2023 => TuePlotsSetting(
+        width = 6.75,
+        width_half = 3.25,
+        base_fontsize = 10,
+        font = "Times",
+    ),
 )
 
 """
