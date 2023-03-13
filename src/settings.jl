@@ -59,6 +59,12 @@ SETTINGS = Dict(
         base_fontsize = 10,
         font = "Times",
     ),
+    :TMLR => TuePlotsSetting(
+        width = 6.5,
+        width_half = 3.25,
+        base_fontsize = 10,
+        font = "Times",
+    ),
 )
 
 """
