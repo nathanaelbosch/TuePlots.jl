@@ -1,12 +1,18 @@
 """
     MakieCore.Theme(setting::TuePlotsSetting;
-        font = true, fontsize = true, figsize = :full, thinned = trues+
+        font = true, fontsize = true, figsize = :full, thinned = true
 
 Make a Makie `Theme` out of the `TuePlotsSetting`.
 """
 function MakieCore.Theme(
     setting::TuePlotsSetting;
-    font = true, fontsize = true, figsize = :full, thinned = true,
+    font = true,
+    fontsize = true,
+    figsize = true,
+    single_column = false,
+    subplot_height_to_width_ratio = GOLDEN_RATIO,
+    nrows = 1, ncols = 1,
+    thinned = true,
 )
     theme = MakieCore.Theme()
 
@@ -38,11 +44,17 @@ function MakieCore.Theme(
         )
     end
 
-    if figsize == :full
-        resolution = width_to_resolution(setting.width)
-        theme = merge(theme, MakieCore.Theme(resolution = resolution))
-    elseif figsize == :half && setting.width_half isa Number
-        resolution = width_to_resolution(setting.width_half)
+    if figsize
+        width = if !single_column
+            setting.width
+        else
+            if !setting.width_half isa Number
+                error("`single_column` not supported for this setting")
+            end
+            setting.width_half
+        end
+        height = width * subplot_height_to_width_ratio * nrows / ncols
+        resolution = (width * POINTS_PER_INCH, height * POINTS_PER_INCH)
         theme = merge(theme, MakieCore.Theme(resolution = resolution))
     end
 
