@@ -9,6 +9,11 @@ import MakieCore, Plots
         @testset "$k" for k in setting_keys
             s = TuePlots.SETTINGS[k]
             @test MakieCore.Theme(s) isa MakieCore.Theme
+            if s.width_half isa Number
+                @test_nowarn MakieCore.Theme(s; single_column=true)
+            else
+                @test_throws ErrorException MakieCore.Theme(s; single_column = true)
+            end
         end
     end
 
