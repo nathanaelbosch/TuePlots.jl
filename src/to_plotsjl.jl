@@ -7,7 +7,13 @@ Build a named tuple to be used with `Plots.theme` out of the `TuePlotsSetting`.
 """
 function get_plotsjl_theme_kwargs(
     setting::TuePlotsSetting;
-    font = false, fontsize = true, figsize = :full, thickness_scaling = true,
+    font = false,
+    fontsize = true,
+    figsize = true,
+    single_column = false,
+    subplot_height_to_width_ratio = GOLDEN_RATIO,
+    nrows = 1, ncols = 1,
+    thickness_scaling = true,
 )
     kwargs = (;)
 
@@ -30,14 +36,17 @@ function get_plotsjl_theme_kwargs(
         )
     end
 
-    if figsize == :full
-        resolution = width_to_resolution(setting.width)
-        kwargs = merge(kwargs, (; size = resolution))
-    elseif figsize == :half
-        if !(setting.width_half isa Number)
-            raise(ArgumentError("`:half` figsize is not available for this setting."))
+    if figsize
+        width = if !single_column
+            setting.width
+        else
+            if !(setting.width_half isa Number)
+                error("`single_column` not supported for this setting")
+            end
+            setting.width_half
         end
-        resolution = width_to_resolution(setting.width_half)
+        height = width * subplot_height_to_width_ratio * nrows / ncols
+        resolution = (width * POINTS_PER_INCH, height * POINTS_PER_INCH)
         kwargs = merge(kwargs, (; size = resolution))
     end
 

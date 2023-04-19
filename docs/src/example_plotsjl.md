@@ -21,7 +21,7 @@ theme(:default;
         TuePlots.SETTINGS[:ICML2022];
         font = true,
         fontsize = true,
-        figsize = :full,
+        figsize = true,
     )...)
 plot(
     data',
