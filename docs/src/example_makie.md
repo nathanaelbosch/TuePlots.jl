@@ -82,3 +82,49 @@ end
 ```
 
 Voilà! And if you like this setting, you can also reduce padding and line widths with less effort by just setting `thinned=true` when creating the Theme.
+
+
+## Adjust heights to fit simple subplot layouts
+
+In the example above, TuePlots.jl conveniently set the figure size such that the figure nicely fits into the paper.
+But the result does not look as nice when we want to have multiple subplots:
+
+```@example 1
+data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
+
+function simple_subplots(data)
+    fig = Figure()
+    for i in 1:3
+        ax = Axis(fig[1, i])
+        sp = series!(ax, data)
+    end
+    return fig
+end
+
+with_theme(T) do
+    simple_subplots(data)
+end
+```
+
+The overall figure size is still the same as above, the width fits the paper and the height is chosen such that the resulting figure has a golden ratio.
+But as a result, the individual subplots became too tall.
+Instead, we might want to keep the golden ratio of each subplot, and choose the height accordingly.
+You can do this by specifying `nrows=1` and `ncols=3` when creating the Makie theme:
+
+```@example 1
+T2 = Theme(
+    TuePlots.SETTINGS[:ICML2022];
+    font = true,
+    fontsize = true,
+    figsize = true,
+    nrows=1,
+    ncols=3,
+    thinned = true,
+)
+with_theme(T2) do
+    simple_subplots(data)
+end
+```
+
+There we go!
+This way, each individual subplot has the golden ratio.
