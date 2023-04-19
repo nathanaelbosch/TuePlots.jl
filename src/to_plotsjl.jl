@@ -40,7 +40,7 @@ function get_plotsjl_theme_kwargs(
         width = if !single_column
             setting.width
         else
-            if !setting.width_half isa Number
+            if !(setting.width_half isa Number)
                 error("`single_column` not supported for this setting")
             end
             setting.width_half
@@ -49,7 +49,6 @@ function get_plotsjl_theme_kwargs(
         resolution = (width * POINTS_PER_INCH, height * POINTS_PER_INCH)
         kwargs = merge(kwargs, (; size = resolution))
     end
-
 
     if thickness_scaling
         # somehow necessary to get the same font sizes as with Makie.jl

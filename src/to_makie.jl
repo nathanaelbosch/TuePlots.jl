@@ -48,7 +48,7 @@ function MakieCore.Theme(
         width = if !single_column
             setting.width
         else
-            if !setting.width_half isa Number
+            if !(setting.width_half isa Number)
                 error("`single_column` not supported for this setting")
             end
             setting.width_half
