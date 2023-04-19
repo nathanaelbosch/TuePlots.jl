@@ -36,8 +36,14 @@ using CairoMakie, TuePlots, Random
 data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
 
 # Create a Makie.Theme with correct font, fontsize, and figure size:
-T = Theme(TuePlots.SETTINGS[:AISTATS2022];
-          font = true, fontsize = true, figsize = :half, thinned = true)
+T = Theme(
+    TuePlots.SETTINGS[:AISTATS2022];
+    font = true,
+    fontsize = true,
+    figsize = true,
+    single_column = true,
+    thinned = true
+)
 
 with_theme(T) do
     fig = Figure()
@@ -69,7 +75,8 @@ theme(:default;
     TuePlots.get_plotsjl_theme_kwargs(
         TuePlots.SETTINGS[:AISTATS2022];
         fontsize = true,
-        figsize = :half,
+        figsize = true,
+        single_column = true,
     )...)
 
 plot(data',
