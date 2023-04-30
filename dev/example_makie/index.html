@@ -606,7 +606,7 @@ plot_data(data)</code></pre><img src='data:image/svg+xml;utf-8,<?xml version="1.
 </g>
 </svg>
 '/><p>This plot looks fine here in the documentation, but when you imagine it as a full-width plot in a paper the fonts are much too large. It&#39;s easy to fix these with TuePlots.jl!</p><h2 id="Creating-and-using-Makie-Themes-with-TuePlots.jl"><a class="docs-heading-anchor" href="#Creating-and-using-Makie-Themes-with-TuePlots.jl">Creating and using Makie Themes with TuePlots.jl</a><a id="Creating-and-using-Makie-Themes-with-TuePlots.jl-1"></a><a class="docs-heading-anchor-permalink" href="#Creating-and-using-Makie-Themes-with-TuePlots.jl" title="Permalink"></a></h2><p>All we have to do is create a Makie <code>Theme</code> from one of the available settings:</p><pre><code class="language-julia hljs">T = Theme(
-    TuePlots.SETTINGS[:ICML2022];
+    TuePlots.SETTINGS[:ICML];
     font = true,
     fontsize = true,
     single_column = false,
@@ -2203,7 +2203,7 @@ end</code></pre><img src='data:image/svg+xml;utf-8,<?xml version="1.0" encoding=
 </g>
 </svg>
 '/><p>The overall figure size is still the same as above, the width fits the paper and the height is chosen such that the resulting figure has a golden ratio. But as a result, the individual subplots became too tall. Instead, we might want to keep the golden ratio of each subplot, and choose the height accordingly. You can do this by specifying <code>nrows=1</code> and <code>ncols=3</code> when creating the Makie theme:</p><pre><code class="language-julia hljs">T2 = Theme(
-    TuePlots.SETTINGS[:ICML2022];
+    TuePlots.SETTINGS[:ICML];
     font = true,
     fontsize = true,
     figsize = true,
@@ -2728,4 +2728,4 @@ end</code></pre><img src='data:image/svg+xml;utf-8,<?xml version="1.0" encoding=
 <path style="fill:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%25,0%25,0%25);stroke-opacity:1;stroke-miterlimit:2;" d="M 483 84.25 L 483 4.75 " transform="matrix(0.75,0,0,0.75,0,0)"/>
 </g>
 </svg>
-'/><p>There we go! This way, each individual subplot has the golden ratio.</p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../example_plotsjl/">Example with Plots.jl (experimental) »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Sunday 30 April 2023 12:58">Sunday 30 April 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+'/><p>There we go! This way, each individual subplot has the golden ratio.</p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../example_plotsjl/">Example with Plots.jl (experimental) »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Sunday 30 April 2023 13:31">Sunday 30 April 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
