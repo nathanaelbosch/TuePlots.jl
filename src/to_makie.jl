@@ -11,6 +11,7 @@ function MakieCore.Theme(
     figsize = true,
     single_column = false,
     subplot_height_to_width_ratio = GOLDEN_RATIO,
+    width_coeff = 1,
     nrows = 1, ncols = 1,
     thinned = true,
 )
@@ -53,6 +54,7 @@ function MakieCore.Theme(
             end
             setting.width_half
         end
+        width *= width_coeff
         height = width * subplot_height_to_width_ratio * nrows / ncols
         resolution = (width * POINTS_PER_INCH, height * POINTS_PER_INCH)
         theme = merge(theme, MakieCore.Theme(resolution = resolution))
