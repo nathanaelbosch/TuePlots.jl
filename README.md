@@ -37,7 +37,7 @@ data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
 
 # Create a Makie.Theme with correct font, fontsize, and figure size:
 T = Theme(
-    TuePlots.SETTINGS[:AISTATS2022];
+    TuePlots.SETTINGS[:AISTATS];
     font = true,
     fontsize = true,
     figsize = true,
@@ -73,7 +73,7 @@ data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
 
 theme(:default;
     TuePlots.get_plotsjl_theme_kwargs(
-        TuePlots.SETTINGS[:AISTATS2022];
+        TuePlots.SETTINGS[:AISTATS];
         fontsize = true,
         figsize = true,
         single_column = true,
