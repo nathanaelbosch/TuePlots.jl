@@ -42,8 +42,8 @@ function MakieCore.Theme(
                     ticklabelsize = small,
                 ),
                 Label = (;
-                    fontsize = small,
-                )
+                    fontsize = small
+                ),
             ),
         )
     end

@@ -32,7 +32,7 @@ All we have to do is create a Makie `Theme` from one of the available settings:
 
 ```@example 1
 T = Theme(
-    TuePlots.SETTINGS[:ICML2022];
+    TuePlots.SETTINGS[:ICML];
     font = true,
     fontsize = true,
     single_column = false,
@@ -113,7 +113,7 @@ You can do this by specifying `nrows=1` and `ncols=3` when creating the Makie th
 
 ```@example 1
 T2 = Theme(
-    TuePlots.SETTINGS[:ICML2022];
+    TuePlots.SETTINGS[:ICML];
     font = true,
     fontsize = true,
     figsize = true,

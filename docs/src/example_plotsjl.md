@@ -18,7 +18,7 @@ end
 
 theme(:default;
     TuePlots.get_plotsjl_theme_kwargs(
-        TuePlots.SETTINGS[:ICML2022];
+        TuePlots.SETTINGS[:ICML];
         font = true,
         fontsize = true,
         figsize = true,
