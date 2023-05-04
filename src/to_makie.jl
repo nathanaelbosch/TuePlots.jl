@@ -18,13 +18,12 @@ function MakieCore.Theme(
     theme = MakieCore.Theme()
 
     if font
-        theme = merge(theme, MakieCore.Theme(font = setting.font))
+        theme = merge(MakieCore.Theme(font = setting.font, theme))
     end
 
     if fontsize
         main, small = base_fontsize_to_sizes(setting.base_fontsize)
         theme = merge(
-            theme,
             MakieCore.Theme(
                 fontsize = main,
                 Axis = (
@@ -45,6 +44,7 @@ function MakieCore.Theme(
                     fontsize = small
                 ),
             ),
+            theme,
         )
     end
 
@@ -60,11 +60,11 @@ function MakieCore.Theme(
         width *= width_coeff
         height = width * subplot_height_to_width_ratio * nrows / ncols
         resolution = (width * POINTS_PER_INCH, height * POINTS_PER_INCH)
-        theme = merge(theme, MakieCore.Theme(resolution = resolution))
+        theme = merge(MakieCore.Theme(resolution = resolution), theme)
     end
 
     if thinned
-        theme = merge(theme, MakieThinTheme)
+        theme = merge(MakieThinTheme, theme)
     end
 
     return theme
