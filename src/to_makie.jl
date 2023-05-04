@@ -19,6 +19,23 @@ function MakieCore.Theme(
 
     if font
         theme = merge(MakieCore.Theme(font = setting.font, theme))
+        theme = merge(
+            MakieCore.Theme(
+                font = setting.font,
+                Axis = (
+                    titlefont = setting.font,
+                    xlabelfont = setting.font,
+                    ylabelfont = setting.font,
+                    xticklabelfont = setting.font,
+                    yticklabelfont = setting.font,
+                ),
+                Legend = (
+                    titlefont = setting.font,
+                    labelfont = setting.font,
+                ),
+            ),
+            theme,
+        )
     end
 
     if fontsize
@@ -33,8 +50,8 @@ function MakieCore.Theme(
                     ylabelsize = main,
                     titlesize = main,
                 ),
-                Legend = (
-                    labelsize = main,
+                Legend = (;
+                    labelsize = main
                 ),
                 Colorbar = (
                     labelsize = main,
