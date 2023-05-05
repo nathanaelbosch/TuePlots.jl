@@ -18,7 +18,6 @@ function MakieCore.Theme(
     theme = MakieCore.Theme()
 
     if font
-        theme = merge(MakieCore.Theme(font = setting.font, theme))
         theme = merge(
             MakieCore.Theme(
                 font = setting.font,
