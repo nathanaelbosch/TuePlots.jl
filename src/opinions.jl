@@ -20,4 +20,7 @@ const MakieThinTheme = MakieCore.Theme(
         patchsize = (8, 8),
         padding = (5, 5, 5, 5),
     ),
+    Colorbar = (;
+        spinewidth = 0.5,
+    )
 )
