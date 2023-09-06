@@ -53,6 +53,12 @@ SETTINGS = Dict(
         base_fontsize = 10,
         font = "Times",
     ),
+    :AAAI => TuePlotsSetting( # 2024
+        width = 6.975,
+        width_half = 3.3,
+        base_fontsize = 10,
+        font = "TeX Computer Modern",
+    ),
     :TMLR => TuePlotsSetting(
         width = 6.5,
         width_half = 3.25,
