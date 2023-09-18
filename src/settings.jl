@@ -41,7 +41,7 @@ SETTINGS = Dict(
         base_fontsize = missing,
         font = missing,
     ),
-    :ICLR => TuePlotsSetting( # 2023
+    :ICLR => TuePlotsSetting( # 2024
         width = 5.5,
         width_half = nothing,
         base_fontsize = 10,
