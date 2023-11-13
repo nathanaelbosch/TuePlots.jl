@@ -35,11 +35,11 @@ SETTINGS = Dict(
         base_fontsize = 10.95,
         font = "TeX Computer Modern",
     ),
-    :CVPR => TuePlotsSetting( # 2022
-        width = 496.85625 / POINTS_PER_INCH,
-        width_half = 237.13594 / POINTS_PER_INCH,
-        base_fontsize = missing,
-        font = missing,
+    :CVPR => TuePlotsSetting( # 2024
+        width = 6.875,
+        width_half = 3.25,
+        base_fontsize = 9,
+        font = "Times New Roman",
     ),
     :ICLR => TuePlotsSetting( # 2024
         width = 5.5,
