@@ -7,7 +7,7 @@ version = "0.3.2"
 MakieCore = "20f20a25-4f0e-4fdf-b5d1-57303727442b"
 
 [compat]
-MakieCore = "0.4, 0.5, 0.6"
+MakieCore = "0.4, 0.5, 0.6, 0.7"
 julia = "1.7"
 
 [extras]
