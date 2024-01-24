@@ -11,7 +11,7 @@ Dict of available TuePlots settings.
 Use with [`MakieCore.Theme`](@ref) or [`get_plotsjl_theme_kwargs`](@ref).
 """
 SETTINGS = Dict(
-    :ICML => TuePlotsSetting( # 2022
+    :ICML => TuePlotsSetting( # 2024
         width = 6.75,
         width_half = 3.25,
         base_fontsize = 9,
