@@ -65,6 +65,12 @@ SETTINGS = Dict(
         base_fontsize = 10,
         font = "Times",
     ),
+    :ECCV => TuePlotsSetting( # 2024
+        width = 4.8,
+        width_half = nothing,
+        base_fontsize = 9,
+        font = "TeX Computer Modern",
+    ),
 )
 
 """
