@@ -23,7 +23,7 @@ SETTINGS = Dict(
         base_fontsize = 10,
         font = "Times",
     ),
-    :NEURIPS => TuePlotsSetting( # 2023
+    :NEURIPS => TuePlotsSetting( # 2024
         width = 5.5,
         width_half = nothing,
         base_fontsize = 10,
