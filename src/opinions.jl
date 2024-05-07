@@ -17,7 +17,7 @@ const MakieThinTheme = MakieCore.Theme(
     ),
     Legend = (
         framewidth = 0.5,
-        patchsize = (8, 8),
+        patchsize = (20, 8),
         padding = (5, 5, 5, 5),
     ),
     Colorbar = (;
