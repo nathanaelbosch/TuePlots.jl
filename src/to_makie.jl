@@ -79,8 +79,8 @@ function MakieCore.Theme(
         end
         width *= width_coeff
         height = width * subplot_height_to_width_ratio * nrows / ncols
-        resolution = (width * POINTS_PER_INCH, height * POINTS_PER_INCH)
-        theme = merge(MakieCore.Theme(resolution = resolution), theme)
+        size = (width * POINTS_PER_INCH, height * POINTS_PER_INCH)
+        theme = merge(MakieCore.Theme(size = size), theme)
     end
 
     if thinned
