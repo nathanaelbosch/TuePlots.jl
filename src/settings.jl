@@ -71,6 +71,18 @@ SETTINGS = Dict(
         base_fontsize = 9,
         font = "TeX Computer Modern",
     ),
+    :JCAP => TuePlotsSetting(
+        width = 6.08948,
+        width_half = nothing,
+        base_fontsize = 11,
+        font = "TeX Computer Modern",
+    ),
+    :JHEP => TuePlotsSetting(
+        width = 5.95393,
+        width_half = nothing,
+        base_fontsize = 11,
+        font = "TeX Computer Modern",
+    ),
 )
 
 """
