@@ -32,6 +32,10 @@ function MakieCore.Theme(
                     titlefont = setting.font,
                     labelfont = setting.font,
                 ),
+                Colorbar = (
+                    labelfont = setting.font,
+                    ticklabelfont = setting.font,
+                )
             ),
             theme,
         )
