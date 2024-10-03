@@ -83,6 +83,12 @@ SETTINGS = Dict(
         base_fontsize = 11,
         font = "TeX Computer Modern",
     ),
+    :PRL => TuePlotsSetting(
+        width = 7.05826,
+        width_half = 3.40457,
+        base_fontsize = 10,
+        font = "TeX Computer Modern",
+    ),
 )
 
 """
