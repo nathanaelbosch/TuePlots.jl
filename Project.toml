@@ -1,7 +1,7 @@
 name = "TuePlots"
 uuid = "7dc86ad5-723e-4492-bd0d-d0b58009a4c8"
 authors = ["Nathanael Bosch <nathanael.bosch@uni-tuebingen.de> and contributors"]
-version = "0.3.3"
+version = "0.3.4"
 
 [deps]
 MakieCore = "20f20a25-4f0e-4fdf-b5d1-57303727442b"
