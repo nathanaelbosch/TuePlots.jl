@@ -23,10 +23,20 @@ function MakieCore.Theme(
                 font = setting.font,
                 Axis = (
                     titlefont = setting.font,
+                    subtitlefont = setting.font,
                     xlabelfont = setting.font,
                     ylabelfont = setting.font,
                     xticklabelfont = setting.font,
                     yticklabelfont = setting.font,
+                ),
+                Axis3 = (
+                    titlefont = setting.font,
+                    xlabelfont = setting.font,
+                    ylabelfont = setting.font,
+                    zlabelfont = setting.font,
+                    xticklabelfont = setting.font,
+                    yticklabelfont = setting.font,
+                    zticklabelfont = setting.font,
                 ),
                 Legend = (
                     titlefont = setting.font,
@@ -35,6 +45,9 @@ function MakieCore.Theme(
                 Colorbar = (
                     labelfont = setting.font,
                     ticklabelfont = setting.font,
+                ),
+                Label = (
+                    font = setting.font,
                 ),
             ),
             theme,
@@ -47,14 +60,25 @@ function MakieCore.Theme(
             MakieCore.Theme(
                 fontsize = main,
                 Axis = (
+                    titlesize = main,
+                    subtitlesize = main,
                     xticklabelsize = small,
                     yticklabelsize = small,
                     xlabelsize = main,
                     ylabelsize = main,
+                ),
+                Axis3 = (
                     titlesize = main,
+                    subtitlesize = main,
+                    xticklabelsize = small,
+                    yticklabelsize = small,
+                    zticklabelsize = small,
+                    xlabelsize = main,
+                    ylabelsize = main,
+                    zlabelsize = main,
                 ),
                 Legend = (;
-                    labelsize = main
+                    labelsize = main,
                 ),
                 Colorbar = (
                     labelsize = main,
