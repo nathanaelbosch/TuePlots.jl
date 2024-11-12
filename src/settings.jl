@@ -89,6 +89,12 @@ SETTINGS = Dict(
         base_fontsize = 10,
         font = "TeX Computer Modern",
     ),
+    :ProbNum25 => TuePlotsSetting( # 2025
+        width = 6.9444,
+        width_half = 3.333,
+        base_fontsize = 10,
+        font = "TeX Computer Modern",
+    ),
 )
 
 """
