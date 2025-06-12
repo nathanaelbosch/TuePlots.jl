@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Example with Makie (recommended) · TuePlots.jl</title><meta name="title" content="Example with Makie (recommended) · TuePlots.jl"/><meta property="og:title" content="Example with Makie (recommended) · TuePlots.jl"/><meta property="twitter:title" content="Example with Makie (recommended) · TuePlots.jl"/><meta name="description" content="Documentation for TuePlots.jl."/><meta property="og:description" content="Documentation for TuePlots.jl."/><meta property="twitter:description" content="Documentation for TuePlots.jl."/><meta property="og:url" content="https://nathanaelbosch.github.io/TuePlots.jl/example_makie/"/><meta property="twitter:url" content="https://nathanaelbosch.github.io/TuePlots.jl/example_makie/"/><link rel="canonical" href="https://nathanaelbosch.github.io/TuePlots.jl/example_makie/"/><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../search_index.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">TuePlots.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li class="is-active"><a class="tocitem" href>Example with Makie (recommended)</a><ul class="internal"><li><a class="tocitem" href="#Creating-and-using-Makie-Themes-with-TuePlots.jl"><span>Creating and using Makie Themes with TuePlots.jl</span></a></li><li><a class="tocitem" href="#Combining-TuePlots.jl&#39;s-themes-with-your-custom-theme"><span>Combining TuePlots.jl&#39;s themes with your custom theme</span></a></li><li><a class="tocitem" href="#Adjust-heights-to-fit-simple-subplot-layouts"><span>Adjust heights to fit simple subplot layouts</span></a></li></ul></li><li><a class="tocitem" href="../example_plotsjl/">Example with Plots.jl (experimental)</a></li><li><a class="tocitem" href="../api/">API</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Example with Makie (recommended)</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Example with Makie (recommended)</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/nathanaelbosch/TuePlots.jl/blob/main/docs/src/example_makie.md#" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Using-TuePlots-with-Makie"><a class="docs-heading-anchor" href="#Using-TuePlots-with-Makie">Using TuePlots with Makie</a><a id="Using-TuePlots-with-Makie-1"></a><a class="docs-heading-anchor-permalink" href="#Using-TuePlots-with-Makie" title="Permalink"></a></h1><div class="admonition is-info" id="Info-28e5d15c193a8f0"><header class="admonition-header">Info<a class="admonition-anchor" href="#Info-28e5d15c193a8f0" title="Permalink"></a></header><div class="admonition-body"><p>This tutorial shows how to set fonts, fontsize, and figure sizes with TuePlots.jl. <strong>The resulting plots might not actually look better in the browser! But that&#39;s not really a problem: the goal is to make plots for <em>publications</em>.</strong> Keep this in mind when interpreting the resulting figures.</p></div></div><p>Let&#39;s make a simple series plot of some time series data:</p><pre><code class="language-julia hljs">using CairoMakie, TuePlots, Random
+CairoMakie.activate!(type = &quot;svg&quot;)
+
+data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
+
+function plot_data(data)
+    fig = Figure(px_per_unit=10,pt_per_unit=10)
+    ax = Axis(fig[1, 1], xlabel = &quot;Time&quot;, ylabel = &quot;Quantity of interest&quot;)
+    sp = series!(ax, data, labels = [&quot;label $i&quot; for i in 1:4])
+    axislegend(ax)
+    return fig
+end
+
+plot_data(data)</code></pre><img src="557fb6fd.svg" alt="Example block output"/><p>This plot looks fine here in the documentation, but when you imagine it as a full-width plot in a paper the fonts are much too large. It&#39;s easy to fix these with TuePlots.jl!</p><h2 id="Creating-and-using-Makie-Themes-with-TuePlots.jl"><a class="docs-heading-anchor" href="#Creating-and-using-Makie-Themes-with-TuePlots.jl">Creating and using Makie Themes with TuePlots.jl</a><a id="Creating-and-using-Makie-Themes-with-TuePlots.jl-1"></a><a class="docs-heading-anchor-permalink" href="#Creating-and-using-Makie-Themes-with-TuePlots.jl" title="Permalink"></a></h2><p>All we have to do is create a Makie <code>Theme</code> from one of the available settings:</p><pre><code class="language-julia hljs">T = Theme(
+    TuePlots.SETTINGS[:ICML];
+    font = true,
+    fontsize = true,
+    single_column = false,
+    figsize = true,
+    thinned = false, # explained later
+)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">Attributes with 8 entries:
+  Axis =&gt; Attributes()
+  Axis3 =&gt; Attributes()
+  Colorbar =&gt; Attributes()
+  font =&gt; Times
+  fontsize =&gt; 8
+  Label =&gt; Attributes()
+  Legend =&gt; Attributes()
+  size =&gt; (487.822, 301.491)</code></pre><p>We can use <code>T</code> like any Makie Theme (see also the <a href="https://makie.juliaplots.org/stable/documentation/theming/">Makie Theming documentation</a>):</p><pre><code class="language-julia hljs">with_theme(T) do
+    plot_data(data)
+end</code></pre><img src="c93eab5d.svg" alt="Example block output"/><p>Fonts and fontsizes are correct now, and the figure size fits perfectly into LaTeX: You can  directly include it with <code>\includegraphics{plot.pdf}</code>, <em>without even setting some <code>[width=\linewidth]</code></em>!</p><h2 id="Combining-TuePlots.jl&#39;s-themes-with-your-custom-theme"><a class="docs-heading-anchor" href="#Combining-TuePlots.jl&#39;s-themes-with-your-custom-theme">Combining TuePlots.jl&#39;s themes with your custom theme</a><a id="Combining-TuePlots.jl&#39;s-themes-with-your-custom-theme-1"></a><a class="docs-heading-anchor-permalink" href="#Combining-TuePlots.jl&#39;s-themes-with-your-custom-theme" title="Permalink"></a></h2><p>But we&#39;re not quite happy with the result yet. Let&#39;s make the plot more beautiful, e.g. by making lines thinner and reducing the padding. As one would normally do with Makie, we just create another Theme - which we then merge with the previous one:</p><pre><code class="language-julia hljs">T2 = Theme(
+    figure_padding = 5,
+    Axis = (
+        spinewidth = 0.5,
+        xtickwidth = 0.5,
+        ytickwidth = 0.5,
+        xticksize = 2,
+        yticksize = 2,
+    ),
+    Legend = (
+        framewidth = 0.5,
+        patchsize = (20, 8),
+        padding = (5, 5, 5, 5),
+    ),
+)
+
+with_theme(merge(T, T2)) do
+    plot_data(data)
+end</code></pre><img src="2f7a43be.svg" alt="Example block output"/><p>Voilà! And if you like this setting, you can also reduce padding and line widths with less effort by just setting <code>thinned=true</code> when creating the Theme.</p><h2 id="Adjust-heights-to-fit-simple-subplot-layouts"><a class="docs-heading-anchor" href="#Adjust-heights-to-fit-simple-subplot-layouts">Adjust heights to fit simple subplot layouts</a><a id="Adjust-heights-to-fit-simple-subplot-layouts-1"></a><a class="docs-heading-anchor-permalink" href="#Adjust-heights-to-fit-simple-subplot-layouts" title="Permalink"></a></h2><p>In the example above, TuePlots.jl conveniently set the figure size such that the figure nicely fits into the paper. But the result does not look as nice when we want to have multiple subplots:</p><pre><code class="language-julia hljs">data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
+
+function simple_subplots(data)
+    fig = Figure()
+    for i in 1:3
+        ax = Axis(fig[1, i])
+        sp = series!(ax, data)
+    end
+    return fig
+end
+
+with_theme(T) do
+    simple_subplots(data)
+end</code></pre><img src="260d0697.svg" alt="Example block output"/><p>The overall figure size is still the same as above, the width fits the paper and the height is chosen such that the resulting figure has a golden ratio. But as a result, the individual subplots became too tall. Instead, we might want to keep the golden ratio of each subplot, and choose the height accordingly. You can do this by specifying <code>nrows=1</code> and <code>ncols=3</code> when creating the Makie theme:</p><pre><code class="language-julia hljs">T2 = Theme(
+    TuePlots.SETTINGS[:ICML];
+    font = true,
+    fontsize = true,
+    figsize = true,
+    nrows=1,
+    ncols=3,
+    thinned = true,
+)
+with_theme(T2) do
+    simple_subplots(data)
+end</code></pre><img src="9ed0bffc.svg" alt="Example block output"/><p>There we go! This way, each individual subplot has the golden ratio.</p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../example_plotsjl/">Example with Plots.jl (experimental) »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.12.0 on <span class="colophon-date" title="Thursday 12 June 2025 01:22">Thursday 12 June 2025</span>. Using Julia version 1.11.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
