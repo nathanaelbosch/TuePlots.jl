@@ -7,7 +7,7 @@ CurrentModule = TuePlots
 ```@docs
 SETTINGS
 get_available_settings
-MakieCore.Theme
+Makie.Theme
 get_plotsjl_theme_kwargs
 ```
 
