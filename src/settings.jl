@@ -8,7 +8,7 @@ end
 """
 Dict of available TuePlots settings.
 
-Use with [`MakieCore.Theme`](@ref) or [`get_plotsjl_theme_kwargs`](@ref).
+Use with [`Makie.Theme`](@ref) or [`get_plotsjl_theme_kwargs`](@ref).
 """
 SETTINGS = Dict(
     :ICML => TuePlotsSetting( # 2024

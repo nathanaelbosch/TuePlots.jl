@@ -1,10 +1,10 @@
 """
-    MakieCore.Theme(setting::TuePlotsSetting;
+    Makie.Theme(setting::TuePlotsSetting;
         font = true, fontsize = true, figsize = :full, thinned = true
 
 Make a Makie `Theme` out of the `TuePlotsSetting`.
 """
-function MakieCore.Theme(
+function Makie.Theme(
     setting::TuePlotsSetting;
     font = true,
     fontsize = true,
@@ -15,11 +15,11 @@ function MakieCore.Theme(
     nrows = 1, ncols = 1,
     thinned = true,
 )
-    theme = MakieCore.Theme()
+    theme = Makie.Theme()
 
     if font
         theme = merge(
-            MakieCore.Theme(
+            Makie.Theme(
                 font = setting.font,
                 Axis = (
                     titlefont = setting.font,
@@ -57,7 +57,7 @@ function MakieCore.Theme(
     if fontsize
         main, small = base_fontsize_to_sizes(setting.base_fontsize)
         theme = merge(
-            MakieCore.Theme(
+            Makie.Theme(
                 fontsize = main,
                 Axis = (
                     titlesize = main,
@@ -104,7 +104,7 @@ function MakieCore.Theme(
         width *= width_coeff
         height = width * subplot_height_to_width_ratio * nrows / ncols
         size = (width * POINTS_PER_INCH, height * POINTS_PER_INCH)
-        theme = merge(MakieCore.Theme(size = size), theme)
+        theme = merge(Makie.Theme(size = size), theme)
     end
 
     if thinned

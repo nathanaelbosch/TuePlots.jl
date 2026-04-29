@@ -4,12 +4,12 @@ authors = ["Nathanael Bosch <nathanael.bosch@uni-tuebingen.de> and contributors"
 version = "0.3.5"
 
 [deps]
-MakieCore = "20f20a25-4f0e-4fdf-b5d1-57303727442b"
+Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
 
 [compat]
-MakieCore = "0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.10"
+Makie = "0.24"
 Test = "1"
-julia = "1.7"
+julia = "1.10"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
