@@ -14,7 +14,7 @@ CairoMakie.activate!(type = "svg")
 data = cumsum(randn(Xoshiro(2), 4, 201), dims = 2)
 
 function plot_data(data)
-    fig = Figure(px_per_unit=10,pt_per_unit=10)
+    fig = Figure()
     ax = Axis(fig[1, 1], xlabel = "Time", ylabel = "Quantity of interest")
     sp = series!(ax, data, labels = ["label $i" for i in 1:4])
     axislegend(ax)
@@ -57,7 +57,8 @@ You can  directly include it with `\includegraphics{plot.pdf}`, _without even se
 
 But we're not quite happy with the result yet.
 Let's make the plot more beautiful, e.g. by making lines thinner and reducing the padding.
-As one would normally do with Makie, we just create another Theme - which we then merge with the previous one:
+As one would normally do with Makie, we just create another Theme - which we then merge with the previous one.
+Note that in Makie's `merge`, the first theme takes precedence, so our custom theme needs to come first:
 
 ```@example 1
 T2 = Theme(
@@ -76,7 +77,7 @@ T2 = Theme(
     ),
 )
 
-with_theme(merge(T, T2)) do
+with_theme(merge(T2, T)) do
     plot_data(data)
 end
 ```
