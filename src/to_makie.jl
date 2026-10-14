@@ -123,6 +123,9 @@ font_alternatives(family) =
     end
 
 function is_font_available(family)
-    font = Makie.FreeTypeAbstraction.findfont(family; additional_fonts = Makie.assetpath("fonts"))
+    font = Makie.FreeTypeAbstraction.findfont(
+        family;
+        additional_fonts = Makie.assetpath("fonts"),
+    )
     return !isnothing(font) && startswith(lowercase(font.family_name), lowercase(family))
 end
