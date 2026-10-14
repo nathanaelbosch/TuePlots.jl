@@ -2,7 +2,7 @@ module TuePlots
 
 using Makie
 
-const POINTS_PER_INCH = 72.27
+const POINTS_PER_INCH = 72
 const GOLDEN_RATIO = (5.0^0.5 - 1.0) / 2.0
 
 const FONTSIZE_REDUCTION = 1

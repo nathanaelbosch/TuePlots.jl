@@ -50,7 +50,7 @@ with_theme(T) do
     ax = Axis(fig[1, 1], xlabel = "Time", ylabel = "Quantity of interest")
     sp = series!(ax, data, labels = ["label $i" for i in 1:4])
     axislegend(ax)
-    save("makie.pdf", fig, pt_per_unit = 1) # pt_per_unit is needed to ensure the correct sizes
+    save("makie.pdf", fig)
 end
 ```
 

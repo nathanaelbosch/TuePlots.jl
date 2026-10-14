@@ -15,7 +15,7 @@ function Makie.Theme(
     nrows = 1, ncols = 1,
     thinned = true,
 )
-    theme = Makie.Theme()
+    theme = Makie.Theme(CairoMakie = (; pt_per_unit = 1))
 
     if font
         theme = merge(
