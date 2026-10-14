@@ -1,8 +1,11 @@
 """
     Makie.Theme(setting::TuePlotsSetting;
-        font = true, fontsize = true, figsize = :full, thinned = true
+        font = true, fontsize = true, figsize = true, thinned = true, ...)
 
 Make a Makie `Theme` out of the `TuePlotsSetting`.
+
+`font` can be `true` to use the font of the setting, `false` to keep Makie's fonts, or the
+name of a font family, e.g. `font = "TeX Gyre Termes"`.
 """
 function Makie.Theme(
     setting::TuePlotsSetting;
@@ -16,38 +19,13 @@ function Makie.Theme(
 )
     theme = Makie.Theme(CairoMakie = (; pt_per_unit = 1))
 
-    if font
+    if font != false
         theme = merge(
             Makie.Theme(
-                font = setting.font,
-                Axis = (
-                    titlefont = setting.font,
-                    subtitlefont = setting.font,
-                    xlabelfont = setting.font,
-                    ylabelfont = setting.font,
-                    xticklabelfont = setting.font,
-                    yticklabelfont = setting.font,
-                ),
-                Axis3 = (
-                    titlefont = setting.font,
-                    xlabelfont = setting.font,
-                    ylabelfont = setting.font,
-                    zlabelfont = setting.font,
-                    xticklabelfont = setting.font,
-                    yticklabelfont = setting.font,
-                    zticklabelfont = setting.font,
-                ),
-                Legend = (
-                    titlefont = setting.font,
-                    labelfont = setting.font,
-                ),
-                Colorbar = (
-                    labelfont = setting.font,
-                    ticklabelfont = setting.font,
-                ),
-                Label = (
-                    font = setting.font,
-                ),
+                fonts = makie_fonts(font === true ? setting.font : font),
+                Axis = (; titlefont = :regular),
+                Axis3 = (; titlefont = :regular),
+                Legend = (; titlefont = :regular),
             ),
             theme,
         )
@@ -111,4 +89,40 @@ function Makie.Theme(
     end
 
     return theme
+end
+
+function makie_fonts(family)
+    if family == "TeX Computer Modern"
+        return (;
+            regular = Makie.texfont(:regular),
+            bold = Makie.texfont(:bold),
+            italic = Makie.texfont(:italic),
+            bold_italic = Makie.texfont(:bolditalic),
+        )
+    end
+    candidates = font_alternatives(family)
+    i = findfirst(is_font_available, candidates)
+    if isnothing(i)
+        @warn "Could not find any of the fonts $(join(candidates, ", ")); using TeX Computer Modern instead."
+        return makie_fonts("TeX Computer Modern")
+    end
+    family = candidates[i]
+    return (;
+        regular = family,
+        bold = "$family Bold",
+        italic = "$family Italic",
+        bold_italic = "$family Bold Italic",
+    )
+end
+
+font_alternatives(family) =
+    if family in ("Times", "Times New Roman")
+        unique([family, "Times New Roman", "Times", "TeX Gyre Termes", "Nimbus Roman"])
+    else
+        [family]
+    end
+
+function is_font_available(family)
+    font = Makie.FreeTypeAbstraction.findfont(family; additional_fonts = Makie.assetpath("fonts"))
+    return !isnothing(font) && startswith(lowercase(font.family_name), lowercase(family))
 end
