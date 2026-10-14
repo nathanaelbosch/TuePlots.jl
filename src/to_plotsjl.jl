@@ -11,8 +11,7 @@ function get_plotsjl_theme_kwargs(
     fontsize = true,
     figsize = true,
     single_column = false,
-    subplot_height_to_width_ratio = GOLDEN_RATIO,
-    nrows = 1, ncols = 1,
+    height_ratio = GOLDEN_RATIO,
     thickness_scaling = true,
 )
     kwargs = (;)
@@ -45,7 +44,7 @@ function get_plotsjl_theme_kwargs(
             end
             setting.width_half
         end
-        height = width * subplot_height_to_width_ratio * nrows / ncols
+        height = width * height_ratio
         resolution = (width * POINTS_PER_INCH, height * POINTS_PER_INCH)
         kwargs = merge(kwargs, (; size = resolution))
     end

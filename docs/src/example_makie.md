@@ -110,7 +110,7 @@ end
 The overall figure size is still the same as above, the width fits the paper and the height is chosen such that the resulting figure has a golden ratio.
 But as a result, the individual subplots became too tall.
 Instead, we might want to keep the golden ratio of each subplot, and choose the height accordingly.
-You can do this by specifying `nrows=1` and `ncols=3` when creating the Makie theme:
+You can do this by specifying the ratio of figure height to figure width with `height_ratio` when creating the Makie theme:
 
 ```@example 1
 T2 = Theme(
@@ -118,8 +118,7 @@ T2 = Theme(
     font = true,
     fontsize = true,
     figsize = true,
-    nrows=1,
-    ncols=3,
+    height_ratio = TuePlots.GOLDEN_RATIO / 3,
     thinned = true,
 )
 with_theme(T2) do

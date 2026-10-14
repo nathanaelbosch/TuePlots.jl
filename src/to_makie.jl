@@ -10,9 +10,8 @@ function Makie.Theme(
     fontsize = true,
     figsize = true,
     single_column = false,
-    subplot_height_to_width_ratio = GOLDEN_RATIO,
+    height_ratio = GOLDEN_RATIO,
     width_coeff = 1,
-    nrows = 1, ncols = 1,
     thinned = true,
 )
     theme = Makie.Theme(CairoMakie = (; pt_per_unit = 1))
@@ -102,7 +101,7 @@ function Makie.Theme(
             setting.width_half
         end
         width *= width_coeff
-        height = width * subplot_height_to_width_ratio * nrows / ncols
+        height = width * height_ratio
         size = (width * POINTS_PER_INCH, height * POINTS_PER_INCH)
         theme = merge(Makie.Theme(size = size), theme)
     end
