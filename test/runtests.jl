@@ -20,7 +20,7 @@ end
             s = TuePlots.SETTINGS[k]
             @test Makie.Theme(s) isa Makie.Theme
             if s.width_half isa Number
-                @test_nowarn Makie.Theme(s; single_column = true)
+                @test_nowarn Makie.Theme(s; single_column = true, font = false)
             else
                 @test_throws ErrorException Makie.Theme(s; single_column = true)
             end
